@@ -1,8 +1,8 @@
 package main
 
 import (
-	"singo/conf"
-	"singo/server"
+	"goApi/conf"
+	"goApi/server"
 )
 
 func main() {

@@ -1,4 +1,4 @@
-module singo
+module goApi
 
 go 1.12
 
@@ -9,7 +9,7 @@ require (
 	github.com/go-redis/redis v6.15.3+incompatible
 	github.com/jinzhu/gorm v1.9.10
 	github.com/joho/godotenv v1.3.0
-	github.com/liudng/godump v0.0.0-20150708094948-5c7e73aafb21
+	github.com/liudng/godump v0.0.0-20150708094948-5c7e73aafb21 // indirect
 	golang.org/x/crypto v0.0.0-20190701094942-4def268fd1a4
 	gopkg.in/go-playground/validator.v8 v8.18.2
 	gopkg.in/yaml.v2 v2.2.2

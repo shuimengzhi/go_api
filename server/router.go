@@ -1,9 +1,9 @@
 package server
 
 import (
+	"goApi/api"
+	"goApi/middleware"
 	"os"
-	"singo/api"
-	"singo/middleware"
 
 	"github.com/gin-gonic/gin"
 )
@@ -11,7 +11,6 @@ import (
 // NewRouter 路由配置
 func NewRouter() *gin.Engine {
 	r := gin.Default()
-
 	// 中间件, 顺序不能改
 	r.Use(middleware.Session(os.Getenv("SESSION_SECRET")))
 	r.Use(middleware.Cors())
@@ -36,6 +35,13 @@ func NewRouter() *gin.Engine {
 			auth.GET("user/me", api.UserMe)
 			auth.DELETE("user/logout", api.UserLogout)
 		}
+	}
+	v2 := r.Group("/api/v2")
+	{
+		// 获得用户名字
+		// v2.POST("get_name", api.CustomName)
+		// 创建用户
+		v2.POST("create", api.CreateCustom)
 	}
 	return r
 }
