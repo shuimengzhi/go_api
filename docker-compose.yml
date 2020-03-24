@@ -1,0 +1,15 @@
+version: '3'
+services:
+  singo:
+    image: golang:latest
+    container_name: singo
+    expose:
+    - "80"
+    environment:
+    - VIRTUAL_HOST=sjs.ngrok.hanwide.com
+    - GOPROXY=http://mirrors.aliyun.com/goproxy/
+    - GO111MODOLE=on
+    volumes:
+      - ./:/go/src/singo
+    command: go run /go/src/singo/main.go
+    network_mode: docker_network
